@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07111f" />
+    <meta
+      name="description"
+      content="WFLA AI Lab 2026 招新：从 AI 工具实践到 Minecraft × AI 项目，在轻松的氛围里一起学习、创造与发布。"
+    />
+    <meta property="og:title" content="WFLA AI Lab · 2026 招新" />
+    <meta
+      property="og:description"
+      content="零基础也能加入。一起把 AI 用起来，把想法做出来。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/ai-lab-logo.png" />
+    <title>WFLA AI Lab · 2026 招新</title>
+    <link rel="icon" href="assets/ai-lab-logo.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <div class="page-progress" aria-hidden="true"><span></span></div>
+
+    <header class="site-header" id="top">
+      <a class="brand" href="#top" aria-label="WFLA AI Lab 首页">
+        <span class="brand-mark"><img src="assets/ai-lab-logo.png" alt="" /></span>
+        <span class="brand-copy">
+          <strong>WFLA AI Lab</strong>
+          <small>Artificial Intelligence Club</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+        <span class="sr-only">打开导航</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="主导航">
+        <a href="#about">关于我们</a>
+        <a href="#activities">活动方向</a>
+        <a href="#schedule">学期安排</a>
+        <a class="nav-cta" href="#join">加入我们 <span>↗</span></a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <canvas id="network-canvas" aria-hidden="true"></canvas>
+        <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-b" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+
+        <div class="hero-content">
+          <div class="eyebrow reveal">
+            <span class="status-dot"></span>
+            2026 · 春季招新进行中
+          </div>
+
+          <h1 id="hero-title" class="reveal">
+            不只是“会用 AI”<br />
+            <span>而是把想法做出来</span>
+          </h1>
+
+          <p class="hero-lead reveal">
+            WFLA AI Lab 是面向所有同学的人工智能实践社团。<br class="desktop-only" />
+            从大语言模型、AI 工具到深度学习与智能体，一起学习、创造、发布。
+          </p>
+
+          <div class="hero-actions reveal">
+            <a class="button button-primary" href="#join">
+              <span>加入 AI Lab</span><span class="button-icon">↗</span>
+            </a>
+            <a class="button button-ghost" href="#activities">查看活动安排</a>
+          </div>
+
+          <div class="hero-proof reveal" aria-label="社团特点">
+            <div><strong data-count="0">0</strong><span>基础门槛</span></div>
+            <div><strong data-count="2">2</strong><span>条并行主线</span></div>
+            <div><strong data-count="100" data-suffix="%">100%</strong><span>动手实践</span></div>
+          </div>
+        </div>
+
+        <div class="hero-orbit reveal" aria-hidden="true">
+          <div class="orbit-shell">
+            <div class="orbit-ring orbit-ring-one"></div>
+            <div class="orbit-ring orbit-ring-two"></div>
+            <div class="orbit-core">
+              <img src="assets/ai-lab-logo.png" alt="" />
+            </div>
+            <span class="orbit-node node-one">LLM</span>
+            <span class="orbit-node node-two">DL</span>
+            <span class="orbit-node node-three">AGENT</span>
+          </div>
+          <div class="signal-card signal-card-a">
+            <span class="signal-icon">⌁</span>
+            <div><small>当前主题</small><strong id="rotating-topic">AI TOOLS</strong></div>
+          </div>
+          <div class="signal-card signal-card-b">
+            <span class="live-wave"></span>
+            <div><small>LAB STATUS</small><strong>BUILDING</strong></div>
+          </div>
+        </div>
+
+        <a class="scroll-cue" href="#about" aria-label="继续向下浏览">
+          <span>SCROLL TO EXPLORE</span><i></i>
+        </a>
+      </section>
+
+      <section class="section section-light" id="about">
+        <div class="section-inner about-grid">
+          <div class="section-heading reveal">
+            <span class="section-index">01 / ABOUT</span>
+            <h2>让 AI 变得<br /><em>好学、好玩、有用</em></h2>
+          </div>
+
+          <div class="about-copy reveal">
+            <p class="lead-copy">
+              我们以人工智能的<strong>应用与实践</strong>为核心，欢迎每一个好奇的人。
+              不要求编程基础，也不要求你已经懂模型——只需要愿意尝试。
+            </p>
+            <p>
+              这里没有枯燥的单向讲座。我们会把 AI 用进真实的校园任务与创意项目，
+              在轻松的氛围里带新人、做作品，也让每位成员都能参与成果的诞生。
+            </p>
+          </div>
+
+          <div class="principles reveal">
+            <article class="principle-card">
+              <span class="card-number">01</span>
+              <div class="mini-icon">◎</div>
+              <h3>零基础友好</h3>
+              <p>从概念、工具到实践逐步上手，不让技术门槛挡住好奇心。</p>
+            </article>
+            <article class="principle-card featured">
+              <span class="card-number">02</span>
+              <div class="mini-icon">↗</div>
+              <h3>项目驱动</h3>
+              <p>不止听懂，更要做出能展示、能上线、能帮助他人的作品。</p>
+            </article>
+            <article class="principle-card">
+              <span class="card-number">03</span>
+              <div class="mini-icon">✦</div>
+              <h3>全员参与</h3>
+              <p>技术、设计、策划、剪辑都重要，每个人都能找到自己的位置。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark" id="activities">
+        <div class="section-inner">
+          <div class="section-heading split reveal">
+            <div>
+              <span class="section-index">02 / ACTIVITIES</span>
+              <h2>两条主线，<br /><em>并行探索</em></h2>
+            </div>
+            <p>
+              每周计划开展两次活动，分别聚焦一个方向。时间冲突时可以选择一条主线，
+              也欢迎两条都来。具体时段会在活动前通过问卷协调。
+            </p>
+          </div>
+
+          <div class="activity-stack">
+            <article class="activity-card tool-card reveal" data-tilt>
+              <div class="activity-visual tool-visual" aria-hidden="true">
+                <div class="terminal-window">
+                  <div class="terminal-bar"><i></i><i></i><i></i><span>ai-lab / toolkit</span></div>
+                  <div class="terminal-code">
+                    <p><span>01</span><code>idea → prompt → prototype</code></p>
+                    <p><span>02</span><code>research → create → refine</code></p>
+                    <p><span>03</span><code>ship(<b>"something useful"</b>)</code></p>
+                    <div class="terminal-cursor"></div>
+                  </div>
+                </div>
+                <span class="floating-chip chip-a">PPT</span>
+                <span class="floating-chip chip-b">DESIGN</span>
+                <span class="floating-chip chip-c">PROMPT</span>
+              </div>
+              <div class="activity-content">
+                <div class="activity-meta"><span>TRACK 01</span><i></i><span>AI TOOLKIT</span></div>
+                <h3>AI 工具教学<br />与项目开发</h3>
+                <p>
+                  用 AI 更高效地完成检索、写作、海报、演示与创意工作；再把前期积累整合成一个公开的 AI 学习网站。
+                </p>
+                <ul>
+                  <li>前半学期：每次聚焦一个实用方向</li>
+                  <li>后半学期：协作开发并部署成果网站</li>
+                  <li>目标成果：对校园与社会真正有帮助</li>
+                </ul>
+                <button class="text-button activity-expand" type="button" aria-expanded="false">
+                  <span>查看路线细节</span><i>+</i>
+                </button>
+                <div class="activity-detail">
+                  <p>
+                    选题会参考成员真实需求：社团宣传、学生会工作、IB 学习任务或个人创作，都可以成为现场案例。
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="activity-card mc-card reveal" data-tilt>
+              <div class="activity-content">
+                <div class="activity-meta"><span>TRACK 02</span><i></i><span>MC × AI</span></div>
+                <h3>Minecraft × AI<br />团建企划</h3>
+                <p>
+                  把 AI 放进《我的世界》：从移动与巡逻开始训练，让智能体逐渐掌握游戏技巧，并设计大家都能参与的玩法。
+                </p>
+                <ul>
+                  <li>用游戏场景理解 AI 开发基础</li>
+                  <li>开展“大逃杀”等团队测试活动</li>
+                  <li>继续探索多 Agent 协作与内容创作</li>
+                </ul>
+                <button class="text-button activity-expand" type="button" aria-expanded="false">
+                  <span>查看路线细节</span><i>+</i>
+                </button>
+                <div class="activity-detail">
+                  <p>
+                    你可以参与地图、策划、测试、开发或视频剪辑；好的玩法来自所有成员一起试、一起改。
+                  </p>
+                </div>
+              </div>
+              <div class="activity-visual voxel-visual" aria-hidden="true">
+                <div class="voxel-world" id="voxel-world"></div>
+                <div class="agent-marker"><span></span><b>AI AGENT</b><small>PATH FOUND</small></div>
+                <div class="scan-line"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-schedule" id="schedule">
+        <div class="section-inner">
+          <div class="section-heading reveal">
+            <span class="section-index">03 / ROADMAP</span>
+            <h2>一个学期，<br /><em>从上手到上线</em></h2>
+          </div>
+
+          <div class="roadmap reveal" role="list">
+            <article class="roadmap-step active" role="listitem" tabindex="0">
+              <span class="step-id">PHASE 01</span>
+              <div class="step-dot"></div>
+              <small>前半学期</small>
+              <h3>认识工具</h3>
+              <p>围绕具体场景，学习提问、检索、生成、验证与创作。</p>
+            </article>
+            <article class="roadmap-step" role="listitem" tabindex="0">
+              <span class="step-id">PHASE 02</span>
+              <div class="step-dot"></div>
+              <small>期中之后</small>
+              <h3>组队开发</h3>
+              <p>把想法变成页面、程序、地图、智能体与可测试的玩法。</p>
+            </article>
+            <article class="roadmap-step" role="listitem" tabindex="0">
+              <span class="step-id">PHASE 03</span>
+              <div class="step-dot"></div>
+              <small>学期成果</small>
+              <h3>发布作品</h3>
+              <p>上线学习网站，展示项目，并让更多人真正用到成果。</p>
+            </article>
+          </div>
+
+          <div class="schedule-note reveal">
+            <div class="schedule-icon">⌚</div>
+            <div>
+              <span>关于活动时间</span>
+              <p>计划每周两次，两个项目并行开展；正式开始前会通过问卷选择多数成员有空的时段。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section join-section" id="join">
+        <canvas id="join-canvas" aria-hidden="true"></canvas>
+        <div class="join-orb" aria-hidden="true"></div>
+        <div class="section-inner join-inner">
+          <span class="section-index reveal">04 / JOIN US</span>
+          <h2 class="reveal">下一次突破，<br /><em>从你的想法开始。</em></h2>
+          <p class="reveal">
+            不会编程没关系，没有项目经验也没关系。<br />
+            带上好奇心，和我们一起 BUILD · PLAY · SHIP。
+          </p>
+          <button class="button button-primary join-button reveal" type="button" data-open-modal>
+            <span>我要加入 WFLA AI Lab</span><span class="button-icon">↗</span>
+          </button>
+          <div class="contact-grid reveal" aria-label="联系方式">
+            <a class="contact-card" href="https://github.com/WFLA-AI-Lab" target="_blank" rel="noreferrer">
+              <small>GITHUB</small>
+              <strong>WFLA-AI-Lab</strong>
+              <span>查看项目 ↗</span>
+            </a>
+            <a class="contact-card" href="mailto:wflaailab@outlook.com">
+              <small>EMAIL</small>
+              <strong>wflaailab@outlook.com</strong>
+              <span>发送邮件 ↗</span>
+            </a>
+            <button class="contact-card" type="button" data-copy-text="ricykang402">
+              <small>社长微信</small>
+              <strong>ricykang402</strong>
+              <span class="copy-state">复制微信号 ⧉</span>
+            </button>
+          </div>
+          <div class="join-tags reveal" aria-label="招新关键词">
+            <span># 人工智能</span><span># 大语言模型</span><span># 深度学习</span><span># Agent</span><span># 零基础友好</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/ai-lab-logo.png" alt="WFLA AI Lab" />
+        <p>LEARN THE INTELLIGENCE.<br />BUILD THE POSSIBILITY.</p>
+      </div>
+      <div class="footer-meta">
+        <span>© 2026</span>
+        <a href="mailto:wflaailab@outlook.com">EMAIL</a>
+        <a href="https://github.com/WFLA-AI-Lab" target="_blank" rel="noreferrer">GITHUB</a>
+        <a href="#top">BACK TO TOP ↑</a>
+      </div>
+    </footer>
+
+    <dialog class="join-modal" id="join-modal" aria-labelledby="join-modal-title">
+      <button class="modal-close" type="button" data-close-modal aria-label="关闭">×</button>
+      <span class="modal-label">READY TO CREATE?</span>
+      <h2 id="join-modal-title">欢迎加入 AI Lab</h2>
+      <p>通过下面任一方式联系我们，获取招新群、时间问卷与最新项目进度。</p>
+      <div class="modal-steps">
+        <a href="https://github.com/WFLA-AI-Lab" target="_blank" rel="noreferrer"><b>01</b><span>GitHub · WFLA-AI-Lab</span><i>↗</i></a>
+        <a href="mailto:wflaailab@outlook.com"><b>02</b><span>wflaailab@outlook.com</span><i>↗</i></a>
+        <button type="button" data-copy-text="ricykang402"><b>03</b><span>社长微信 · ricykang402</span><i class="copy-state">⧉</i></button>
+      </div>
+      <button class="button button-primary copy-button" type="button" data-copy-text="你好，我想加入 WFLA AI Lab，请问如何进入招新群？">
+        <span>复制入群咨询语</span><span class="button-icon">⧉</span>
+      </button>
+      <small>可将咨询语发送给社长微信或校内负责招新的同学</small>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>

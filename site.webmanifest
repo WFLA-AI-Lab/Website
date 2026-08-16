@@ -1,0 +1,15 @@
+{
+  "name": "WFLA AI Lab",
+  "short_name": "AI Lab",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "icons": [
+    {
+      "src": "assets/ai-lab-logo.png",
+      "sizes": "362x362",
+      "type": "image/png"
+    }
+  ]
+}
