@@ -26,7 +26,7 @@ menuToggle.addEventListener("click", () => {
   menuToggle.setAttribute("aria-expanded", String(open));
   siteNav.classList.toggle("open", open);
 });
-siteNav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
+siteNav.querySelectorAll("a, button").forEach((link) => link.addEventListener("click", () => {
   menuToggle.setAttribute("aria-expanded", "false");
   siteNav.classList.remove("open");
 }));
@@ -56,10 +56,18 @@ document.querySelectorAll(".roadmap-step").forEach((step, index) => {
 
 // Join modal and clipboard helper
 const modal = document.querySelector("#join-modal");
-document.querySelector("[data-open-modal]").addEventListener("click", () => {
+document.querySelectorAll("[data-open-modal]").forEach((button) => button.addEventListener("click", () => {
+  const scrollPosition = window.scrollY;
+  const previousScrollBehavior = document.documentElement.style.scrollBehavior;
+  document.documentElement.style.scrollBehavior = "auto";
   document.body.classList.add("modal-open");
   modal.showModal();
-});
+  window.scrollTo(0, scrollPosition);
+  requestAnimationFrame(() => {
+    window.scrollTo(0, scrollPosition);
+    document.documentElement.style.scrollBehavior = previousScrollBehavior;
+  });
+}));
 const closeModal = () => {
   modal.close();
   document.body.classList.remove("modal-open");
