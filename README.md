@@ -44,7 +44,7 @@ WFLA AI Lab 是一个以人工智能应用与实践为核心的学术类社团�
 ## 项目结构
 
 ```text
-Website/
+
 ├─ .github/
 │  └─ workflows/
 │     └─ deploy-pages.yml
