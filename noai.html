@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f2f6fc" />
+    <meta
+      name="description"
+      content="WFLA AI Lab · NOAI 竞赛培训资料：机器学习（scikit-learn）与深度学习（PyTorch）两套系统讲义，免费公开。"
+    />
+    <title>NOAI 培训 · WFLA AI Lab</title>
+    <link rel="icon" href="assets/ai-lab-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0e1c30;
+        --paper: #f2f6fc;
+        --page: #eaf1f9;
+        --blue: #2967ff;
+        --cyan: #0fb5c9;
+        --cyan-soft: #0794a8;
+        --muted: #5b6b80;
+        --line: rgba(14, 28, 48, 0.12);
+        --container: min(1180px, calc(100vw - 48px));
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0; background: var(--page); color: var(--ink);
+        font-family: "Manrope", "Noto Sans SC", sans-serif; -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+
+      .site-header {
+        width: var(--container); height: 76px; margin: 0 auto;
+        display: flex; align-items: center; justify-content: space-between;
+        border-bottom: 1px solid var(--line);
+      }
+      .brand { display: flex; align-items: center; gap: 13px; }
+      .brand-mark { width: 44px; height: 44px; border-radius: 13px; overflow: hidden; background: white; box-shadow: 0 8px 30px rgba(31, 123, 255, .16); }
+      .brand-mark img { width: 100%; height: 100%; object-fit: cover; }
+      .brand-copy { display: flex; flex-direction: column; line-height: 1.1; }
+      .brand-copy strong { font-size: 15px; letter-spacing: -.02em; }
+      .brand-copy small { font-size: 8px; letter-spacing: .18em; opacity: .55; }
+      .site-nav { display: flex; align-items: center; gap: 26px; font-size: 13px; font-weight: 600; }
+      .site-nav a { opacity: .72; transition: opacity .2s; }
+      .site-nav a:hover { opacity: 1; }
+      .nav-cta {
+        padding: 10px 16px; border: 1px solid rgba(41, 103, 255, .35); border-radius: 999px;
+        font-size: 13px; font-weight: 700; transition: .25s;
+      }
+      .nav-cta:hover { background: var(--blue); color: white; }
+      @media (max-width: 720px) { .site-nav a:not(.nav-cta) { display: none; } }
+
+      .page-head { width: var(--container); margin: 0 auto; padding: 72px 0 34px; }
+      .page-head .section-index { display: block; margin-bottom: 18px; color: var(--blue); font-size: 10px; font-weight: 800; letter-spacing: .24em; }
+      .page-head h1 { margin: 0 0 16px; font-family: "Noto Sans SC", sans-serif; font-size: clamp(38px, 4.6vw, 60px); letter-spacing: -.05em; line-height: 1.12; }
+      .page-head h1 em { font-style: normal; color: var(--blue); }
+      .page-head p { max-width: 680px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.9; }
+
+      .section-index { color: var(--blue); }
+
+      .materials { width: var(--container); margin: 0 auto; display: grid; gap: 22px; padding-bottom: 20px; }
+      .material-card {
+        display: grid; grid-template-columns: 1fr; background: white; border: 1px solid var(--line);
+        border-radius: 24px; overflow: hidden; box-shadow: 0 24px 70px rgba(24, 60, 120, .08);
+      }
+      .material-info { padding: 30px 34px; }
+      .material-meta { display: flex; align-items: center; gap: 10px; font-size: 9px; letter-spacing: .16em; color: var(--cyan-soft); font-weight: 800; }
+      .material-meta i { width: 24px; height: 1px; background: var(--cyan); opacity: .5; }
+      .material-info h2 { margin: 14px 0 10px; font-family: "Noto Sans SC", sans-serif; font-size: clamp(24px, 2.6vw, 34px); letter-spacing: -.04em; }
+      .material-info p { margin: 0 0 18px; color: var(--muted); font-size: 13px; line-height: 1.85; }
+      .material-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+      .button {
+        min-height: 48px; padding: 0 22px; border-radius: 999px; border: 1px solid transparent;
+        display: inline-flex; align-items: center; gap: 14px; font-size: 13px; font-weight: 800; cursor: pointer;
+        transition: transform .25s, box-shadow .25s;
+      }
+      .button:hover { transform: translateY(-2px); }
+      .button-primary { background: linear-gradient(120deg, var(--blue), #1c8cff 62%, var(--cyan)); color: white; box-shadow: 0 14px 40px rgba(29, 104, 255, .28); }
+      .button-ghost { color: var(--ink); border-color: rgba(14, 28, 48, .22); background: rgba(255,255,255,.7); }
+      .button-ghost:hover { background: white; }
+
+      .viewer-wrap { border-top: 1px solid var(--line); background: #dde9f8; }
+      .viewer {
+        width: 100%; height: 640px; border: 0; display: block;
+      }
+      .viewer-fallback { padding: 18px 34px; font-size: 12px; color: var(--muted); }
+      .viewer-fallback a { color: var(--blue); font-weight: 700; }
+      @media (max-width: 720px) { .viewer { height: 460px; } }
+
+      .plan { width: var(--container); margin: 26px auto 0; padding: 26px 30px; background: white; border: 1px solid var(--line); border-radius: 20px; }
+      .plan h3 { margin: 0 0 14px; font-size: 16px; letter-spacing: -.02em; }
+      .plan ol { margin: 0; padding-left: 20px; color: var(--muted); font-size: 13px; line-height: 2; }
+      .plan b { color: var(--ink); }
+
+      .site-footer {
+        width: var(--container); margin: 44px auto 0; padding: 30px 0 40px;
+        border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+      }
+      .site-footer p { margin: 0; color: var(--muted); font-size: 11px; letter-spacing: .1em; }
+      .site-footer nav { display: flex; gap: 22px; font-size: 11px; letter-spacing: .12em; }
+      .site-footer nav a { color: var(--cyan-soft); font-weight: 700; }
+      .site-footer nav a:hover { text-decoration: underline; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"><img src="assets/ai-lab-logo.png" alt="" /></span>
+        <span class="brand-copy">
+          <strong>WFLA AI Lab</strong>
+          <small>NOAI TRAINING</small>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="页内导航">
+        <a href="index.html">返回官网</a>
+        <a href="https://chat.wfla-ailab.top/portal" target="_blank" rel="noreferrer">社团平台</a>
+        <a class="nav-cta" href="#materials">开始学习 ↓</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="page-head">
+        <span class="section-index">TRAINING / NOAI</span>
+        <h1>NOAI 竞赛培训<br /><em>资料公开。</em></h1>
+        <p>
+          NOAI（国际人工智能奥林匹克中国区活动）的选拔从笔试到上机实践，
+          考核 Python 编程、机器学习与深度学习的真功夫。我们把它需要的两块基石
+          —— <b>scikit-learn 机器学习</b> 和 <b>PyTorch 深度学习</b>
+          —— 整理成了两套系统的中文讲义，全部公开，按顺序学即可。
+        </p>
+      </div>
+
+      <div class="materials" id="materials">
+        <article class="material-card">
+          <div class="material-info">
+            <div class="material-meta"><span>MODULE 01</span><i></i><span>MACHINE LEARNING · 48 PAGES</span></div>
+            <h2>scikit-learn 机器学习讲义</h2>
+            <p>
+              从安装配置讲到完整实战：数据表示与预处理、缺失值与特征工程、标准化与编码、
+              逻辑回归 / KNN / SVM / 决策树 / 随机森林、回归与聚类、交叉验证与网格搜索、
+              Pipeline 流水线，最后以鸢尾花数据集全流程收尾。零基础按页顺序读。
+            </p>
+            <div class="material-actions">
+              <a class="button button-primary" href="assets/noai/sklearn.pdf" target="_blank" rel="noreferrer">在线阅读</a>
+              <a class="button button-ghost" href="assets/noai/sklearn.pdf" download>下载 PDF</a>
+            </div>
+          </div>
+          <div class="viewer-wrap">
+            <object class="viewer" data="assets/noai/sklearn.pdf" type="application/pdf">
+              <div class="viewer-fallback">当前浏览器不支持内嵌预览，<a href="assets/noai/sklearn.pdf" target="_blank" rel="noreferrer">点这里在新窗口打开</a>。</div>
+            </object>
+          </div>
+        </article>
+
+        <article class="material-card">
+          <div class="material-info">
+            <div class="material-meta"><span>MODULE 02</span><i></i><span>DEEP LEARNING · 61 PAGES</span></div>
+            <h2>PyTorch 深度学习讲义</h2>
+            <p>
+              深度学习第一课：PyTorch 简介与环境安装（CPU / GPU / macOS）、张量与自动微分、
+              nn.Module 搭建神经网络、优化器与训练循环、模型保存加载、TorchScript 转换，
+              附 torch 与 torch.nn 常用 API 速查手册。
+            </p>
+            <div class="material-actions">
+              <a class="button button-primary" href="assets/noai/pytorch.pdf" target="_blank" rel="noreferrer">在线阅读</a>
+              <a class="button button-ghost" href="assets/noai/pytorch.pdf" download>下载 PDF</a>
+            </div>
+          </div>
+          <div class="viewer-wrap">
+            <object class="viewer" data="assets/noai/pytorch.pdf" type="application/pdf">
+              <div class="viewer-fallback">当前浏览器不支持内嵌预览，<a href="assets/noai/pytorch.pdf" target="_blank" rel="noreferrer">点这里在新窗口打开</a>。</div>
+            </object>
+          </div>
+        </article>
+      </div>
+
+      <div class="plan">
+        <h3>建议学习路线</h3>
+        <ol>
+          <li><b>先把 Python 基础打牢</b>（变量、循环、函数、列表字典）——这是两份讲义的共同前提。</li>
+          <li><b>学 MODULE 01（scikit-learn）</b>：覆盖 NOAI 笔试里的机器学习概念与经典算法。</li>
+          <li><b>再学 MODULE 02（PyTorch）</b>：冲中国站上机实践需要的深度学习功底。</li>
+          <li><b>边学边练</b>：进社团平台（chat.wfla-ailab.top）的 Agent 擂台，把不懂的概念问「代码助手」或「深度思考」。</li>
+        </ol>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>WFLA AI LAB · NOAI TRAINING · 公开资料</p>
+      <nav>
+        <a href="index.html">官网首页</a>
+        <a href="https://chat.wfla-ailab.top/portal" target="_blank" rel="noreferrer">社团平台</a>
+        <a href="https://github.com/WFLA-AI-Lab" target="_blank" rel="noreferrer">GITHUB ↗</a>
+      </nav>
+    </footer>
+  </body>
+</html>
