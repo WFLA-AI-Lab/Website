@@ -45,12 +45,13 @@
       </button>
 
       <nav class="site-nav" id="site-nav" aria-label="主导航">
-        <a href="#about">关于我们</a>
-        <a href="#activities">活动方向</a>
-        <a href="#schedule">学期安排</a>
+        <a href="about.html">关于我们</a>
+        <a href="activities.html">活动方向</a>
+        <a href="schedule.html">学期安排</a>
+        <a href="showcase.html">作品廊</a>
         <a href="noai.html">NOAI 培训</a>
         <a class="nav-platform" href="https://chat.wfla-ailab.top/portal" target="_blank" rel="noreferrer">社团平台 ↗</a>
-        <a class="nav-cta" href="https://chat.wfla-ailab.top/" target="_blank" rel="noreferrer">登录 <span>↗</span></a>
+        <a class="nav-cta" href="https://chat.wfla-ailab.top/portal" target="_blank" rel="noreferrer">进入平台 <span>↗</span></a>
       </nav>
     </header>
 
@@ -77,12 +78,32 @@
             从大语言模型、AI 工具到深度学习与智能体，一起学习、创造、发布。
           </p>
 
+          <div class="hero-guide reveal" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; max-width: 660px;">
+            <article style="flex: 1 1 200px; min-width: 200px; background: #ffffff; border: 1px solid rgba(14, 28, 48, .12); border-radius: 14px; padding: 16px 18px; box-shadow: 0 14px 30px rgba(14, 28, 48, .05);">
+              <strong style="display: flex; align-items: center; gap: 8px; font-size: 15px; color: #0e1c30;"><span style="color: #2967ff; font-size: 12px;">◆</span>聊天站</strong>
+              <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.7; color: #5b6b80;">和 7 位预置 Agent 日常对话：问作业、聊想法、要思路。</p>
+              <a style="display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 700; color: #0fb5c9; text-decoration: none;" href="https://chat.wfla-ailab.top/" target="_blank" rel="noreferrer">进入 ↗</a>
+            </article>
+
+            <article style="flex: 1 1 200px; min-width: 200px; background: #ffffff; border: 1px solid rgba(14, 28, 48, .12); border-radius: 14px; padding: 16px 18px; box-shadow: 0 14px 30px rgba(14, 28, 48, .05);">
+              <strong style="display: flex; align-items: center; gap: 8px; font-size: 15px; color: #0e1c30;"><span style="color: #0fb5c9; font-size: 12px;">▲</span>Agent 擂台</strong>
+              <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.7; color: #5b6b80;">创建你自己的 Agent、把它们串成工作流、和同学互相试聊点评。</p>
+              <a style="display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 700; color: #0fb5c9; text-decoration: none;" href="https://chat.wfla-ailab.top/arena" target="_blank" rel="noreferrer">进入 ↗</a>
+            </article>
+
+            <article style="flex: 1 1 200px; min-width: 200px; background: #ffffff; border: 1px solid rgba(14, 28, 48, .12); border-radius: 14px; padding: 16px 18px; box-shadow: 0 14px 30px rgba(14, 28, 48, .05);">
+              <strong style="display: flex; align-items: center; gap: 8px; font-size: 15px; color: #0e1c30;"><span style="color: #1c8cff; font-size: 12px;">●</span>教程站</strong>
+              <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.7; color: #5b6b80;">从零开始：什么是 Agent、提示词怎么写、流水线怎么搭，读完就能上手。</p>
+              <a style="display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 700; color: #0fb5c9; text-decoration: none;" href="https://tutorial.wfla-ailab.top/" target="_blank" rel="noreferrer">进入 ↗</a>
+            </article>
+          </div>
+
           <div class="hero-actions reveal">
             <button class="button button-primary" type="button" data-open-modal>
               <span>加入 AI Lab</span><span class="button-icon">↗</span>
             </button>
             <a class="button button-ghost" href="https://chat.wfla-ailab.top/portal" target="_blank" rel="noreferrer">进入社团平台</a>
-            <a class="button button-ghost" href="#activities">查看活动安排</a>
+            <a class="button button-ghost" href="activities.html">查看活动安排</a>
           </div>
 
           <div class="hero-proof reveal" aria-label="社团特点">
@@ -113,173 +134,9 @@
           </div>
         </div>
 
-        <a class="scroll-cue" href="#about" aria-label="继续向下浏览">
+        <a class="scroll-cue" href="#platform" aria-label="继续向下浏览">
           <span>SCROLL TO EXPLORE</span><i></i>
         </a>
-      </section>
-
-      <section class="section section-light" id="about">
-        <div class="section-inner about-grid">
-          <div class="section-heading reveal">
-            <span class="section-index">01 / ABOUT</span>
-            <h2>让 AI 变得<br /><em>好学、好玩、有用</em></h2>
-          </div>
-
-          <div class="about-copy reveal">
-            <p class="lead-copy">
-              我们以人工智能的<strong>应用与实践</strong>为核心，欢迎每一个好奇的人。
-              不要求编程基础，也不要求你已经懂模型——只需要愿意尝试。
-            </p>
-            <p>
-              这里没有枯燥的单向讲座。我们会把 AI 用进真实的校园任务与创意项目，
-              在轻松的氛围里带新人、做作品，也让每位成员都能参与成果的诞生。
-            </p>
-          </div>
-
-          <div class="principles reveal">
-            <article class="principle-card">
-              <span class="card-number">01</span>
-              <div class="mini-icon">◎</div>
-              <h3>零基础友好</h3>
-              <p>从概念、工具到实践逐步上手，不让技术门槛挡住好奇心。</p>
-            </article>
-            <article class="principle-card featured">
-              <span class="card-number">02</span>
-              <div class="mini-icon">↗</div>
-              <h3>项目驱动</h3>
-              <p>不止听懂，更要做出能展示、能上线、能帮助他人的作品。</p>
-            </article>
-            <article class="principle-card">
-              <span class="card-number">03</span>
-              <div class="mini-icon">✦</div>
-              <h3>全员参与</h3>
-              <p>技术、设计、策划、剪辑都重要，每个人都能找到自己的位置。</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-dark" id="activities">
-        <div class="section-inner">
-          <div class="section-heading split reveal">
-            <div>
-              <span class="section-index">02 / ACTIVITIES</span>
-              <h2>两条主线，<br /><em>并行探索</em></h2>
-            </div>
-            <p>
-              每周计划开展两次活动，分别聚焦一个方向。时间冲突时可以选择一条主线，
-              也欢迎两条都来。具体时段会在活动前通过问卷协调。
-            </p>
-          </div>
-
-          <div class="activity-stack">
-            <article class="activity-card tool-card reveal" data-tilt>
-              <div class="activity-visual tool-visual" aria-hidden="true">
-                <div class="terminal-window">
-                  <div class="terminal-bar"><i></i><i></i><i></i><span>ai-lab / toolkit</span></div>
-                  <div class="terminal-code">
-                    <p><span>01</span><code>idea → prompt → prototype</code></p>
-                    <p><span>02</span><code>research → create → refine</code></p>
-                    <p><span>03</span><code>ship(<b>"something useful"</b>)</code></p>
-                    <div class="terminal-cursor"></div>
-                  </div>
-                </div>
-                <span class="floating-chip chip-a">PPT</span>
-                <span class="floating-chip chip-b">DESIGN</span>
-                <span class="floating-chip chip-c">PROMPT</span>
-              </div>
-              <div class="activity-content">
-                <div class="activity-meta"><span>TRACK 01</span><i></i><span>AI TOOLKIT</span></div>
-                <h3>AI 工具教学<br />与项目开发</h3>
-                <p>
-                  用 AI 更高效地完成检索、写作、海报、演示与创意工作；再把前期积累整合成一个公开的 AI 学习网站。
-                </p>
-                <ul>
-                  <li>前半学期：每次聚焦一个实用方向</li>
-                  <li>后半学期：协作开发并部署成果网站</li>
-                  <li>目标成果：对校园与社会真正有帮助</li>
-                </ul>
-                <button class="text-button activity-expand" type="button" aria-expanded="false">
-                  <span>查看路线细节</span><i>+</i>
-                </button>
-                <div class="activity-detail">
-                  <p>
-                    选题会参考成员真实需求：社团宣传、学生会工作、IB 学习任务或个人创作，都可以成为现场案例。
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article class="activity-card mc-card reveal" data-tilt>
-              <div class="activity-content">
-                <div class="activity-meta"><span>TRACK 02</span><i></i><span>MC × AI</span></div>
-                <h3>Minecraft × AI<br />团建企划</h3>
-                <p>
-                  把 AI 放进《我的世界》：从移动与巡逻开始训练，让智能体逐渐掌握游戏技巧，并设计大家都能参与的玩法。
-                </p>
-                <ul>
-                  <li>用游戏场景理解 AI 开发基础</li>
-                  <li>开展“大逃杀”等团队测试活动</li>
-                  <li>继续探索多 Agent 协作与内容创作</li>
-                </ul>
-                <button class="text-button activity-expand" type="button" aria-expanded="false">
-                  <span>查看路线细节</span><i>+</i>
-                </button>
-                <div class="activity-detail">
-                  <p>
-                    你可以参与地图、策划、测试、开发或视频剪辑；好的玩法来自所有成员一起试、一起改。
-                  </p>
-                </div>
-              </div>
-              <div class="activity-visual voxel-visual" aria-hidden="true">
-                <div class="voxel-world" id="voxel-world"></div>
-                <div class="agent-marker"><span></span><b>AI AGENT</b><small>PATH FOUND</small></div>
-                <div class="scan-line"></div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-schedule" id="schedule">
-        <div class="section-inner">
-          <div class="section-heading reveal">
-            <span class="section-index">03 / ROADMAP</span>
-            <h2>一个学期，<br /><em>从上手到上线</em></h2>
-          </div>
-
-          <div class="roadmap reveal" role="list">
-            <article class="roadmap-step active" role="listitem" tabindex="0">
-              <span class="step-id">PHASE 01</span>
-              <div class="step-dot"></div>
-              <small>前半学期</small>
-              <h3>认识工具</h3>
-              <p>围绕具体场景，学习提问、检索、生成、验证与创作。</p>
-            </article>
-            <article class="roadmap-step" role="listitem" tabindex="0">
-              <span class="step-id">PHASE 02</span>
-              <div class="step-dot"></div>
-              <small>期中之后</small>
-              <h3>组队开发</h3>
-              <p>把想法变成页面、程序、地图、智能体与可测试的玩法。</p>
-            </article>
-            <article class="roadmap-step" role="listitem" tabindex="0">
-              <span class="step-id">PHASE 03</span>
-              <div class="step-dot"></div>
-              <small>学期成果</small>
-              <h3>发布作品</h3>
-              <p>上线学习网站，展示项目，并让更多人真正用到成果。</p>
-            </article>
-          </div>
-
-          <div class="schedule-note reveal">
-            <div class="schedule-icon">⌚</div>
-            <div>
-              <span>关于活动时间</span>
-              <p>计划每周两次，两个项目并行开展；正式开始前会通过问卷选择多数成员有空的时段。</p>
-            </div>
-          </div>
-        </div>
       </section>
 
       <section class="section section-light" id="platform">
@@ -348,6 +205,9 @@
           </div>
         </div>
       </section>
+
+      <!-- script.js 兼容垫片：活动区块已整体拆分至 activities.html，这里为脚本的 #voxel-world 钩子保留隐藏落点，避免空引用报错 -->
+      <div id="voxel-world" style="display: none" aria-hidden="true"></div>
     </main>
 
     <footer class="site-footer">

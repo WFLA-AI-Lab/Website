@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f2f6fc" />
+    <meta
+      name="description"
+      content="WFLA AI Lab 2026 招新：从 AI 工具实践到 Minecraft × AI 项目，在轻松的氛围里一起学习、创造与发布。"
+    />
+    <meta property="og:title" content="WFLA AI Lab · 2026 招新" />
+    <meta
+      property="og:description"
+      content="零基础也能加入。一起把 AI 用起来，把想法做出来。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/ai-lab-logo.png" />
+    <title>学期安排 · WFLA AI Lab</title>
+    <link rel="icon" href="assets/ai-lab-logo.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <div class="page-progress" aria-hidden="true"><span></span></div>
+
+    <header class="site-header" id="top">
+      <a class="brand" href="index.html" aria-label="WFLA AI Lab 首页">
+        <span class="brand-mark"><img src="assets/ai-lab-logo.png" alt="" /></span>
+        <span class="brand-copy">
+          <strong>WFLA AI Lab</strong>
+          <small>Artificial Intelligence Club</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+        <span class="sr-only">打开导航</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="主导航">
+        <a href="about.html">关于我们</a>
+        <a href="activities.html">活动方向</a>
+        <a href="schedule.html">学期安排</a>
+        <a href="noai.html">NOAI 培训</a>
+        <a class="nav-platform" href="https://chat.wfla-ailab.top/portal" target="_blank" rel="noreferrer">社团平台 ↗</a>
+        <a class="nav-cta" href="https://chat.wfla-ailab.top/portal" target="_blank" rel="noreferrer">进入平台 <span>↗</span></a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="section section-schedule" id="schedule">
+        <div class="section-inner">
+          <div class="section-heading reveal">
+            <span class="section-index">03 / ROADMAP</span>
+            <h2>一个学期，<br /><em>从上手到上线</em></h2>
+          </div>
+
+          <div class="roadmap reveal" role="list">
+            <article class="roadmap-step active" role="listitem" tabindex="0">
+              <span class="step-id">PHASE 01</span>
+              <div class="step-dot"></div>
+              <small>前半学期</small>
+              <h3>认识工具</h3>
+              <p>围绕具体场景，学习提问、检索、生成、验证与创作。</p>
+            </article>
+            <article class="roadmap-step" role="listitem" tabindex="0">
+              <span class="step-id">PHASE 02</span>
+              <div class="step-dot"></div>
+              <small>期中之后</small>
+              <h3>组队开发</h3>
+              <p>把想法变成页面、程序、地图、智能体与可测试的玩法。</p>
+            </article>
+            <article class="roadmap-step" role="listitem" tabindex="0">
+              <span class="step-id">PHASE 03</span>
+              <div class="step-dot"></div>
+              <small>学期成果</small>
+              <h3>发布作品</h3>
+              <p>上线学习网站，展示项目，并让更多人真正用到成果。</p>
+            </article>
+          </div>
+
+          <div class="schedule-note reveal">
+            <div class="schedule-icon">⌚</div>
+            <div>
+              <span>关于活动时间</span>
+              <p>计划每周两次，两个项目并行开展；正式开始前会通过问卷选择多数成员有空的时段。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- script.js 兼容垫片：本页不含 hero 与 join 区块，这里为脚本的全部 DOM 钩子提供隐藏落点，避免空引用报错 -->
+      <div style="display: none" aria-hidden="true">
+        <canvas id="network-canvas"></canvas>
+        <canvas id="join-canvas"></canvas>
+        <span id="rotating-topic"></span>
+        <div id="voxel-world"></div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/ai-lab-logo.png" alt="WFLA AI Lab" />
+        <p>LEARN THE INTELLIGENCE.<br />BUILD THE POSSIBILITY.</p>
+      </div>
+      <div class="footer-meta">
+        <span>© 2026</span>
+        <a href="https://chat.wfla-ailab.top/portal" target="_blank" rel="noreferrer">PLATFORM</a>
+        <a href="mailto:wflaailab@outlook.com">EMAIL</a>
+        <a href="https://github.com/WFLA-AI-Lab" target="_blank" rel="noreferrer">GITHUB</a>
+        <a href="#top">BACK TO TOP ↑</a>
+      </div>
+    </footer>
+
+    <dialog class="join-modal" id="join-modal" aria-labelledby="join-modal-title">
+      <button class="modal-close" type="button" data-close-modal aria-label="关闭">×</button>
+      <span class="modal-label">READY TO CREATE?</span>
+      <h2 id="join-modal-title">欢迎加入 AI Lab</h2>
+      <p>通过下面任一方式联系我们，获取招新群、时间问卷与最新项目进度。</p>
+      <div class="modal-steps">
+        <a href="https://github.com/WFLA-AI-Lab" target="_blank" rel="noreferrer"><b>01</b><span>GitHub · WFLA-AI-Lab</span><i>↗</i></a>
+        <a href="mailto:wflaailab@outlook.com"><b>02</b><span>wflaailab@outlook.com</span><i>↗</i></a>
+        <button type="button" data-copy-text="ricykang402"><b>03</b><span>社长微信 · ricykang402</span><i class="copy-state">⧉</i></button>
+      </div>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>

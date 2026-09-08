@@ -96,6 +96,30 @@
       .button-ghost { color: var(--ink); border-color: rgba(14, 28, 48, .22); background: rgba(255,255,255,.7); }
       .button-ghost:hover { background: white; }
 
+      .preview-note {
+        margin: 18px 34px 0; padding: 12px 20px;
+        display: flex; align-items: center; gap: 12px;
+        background: rgba(41, 103, 255, .09);
+        border: 1px solid rgba(41, 103, 255, .22);
+        border-radius: 18px;
+        font-size: 12.5px; font-weight: 700; letter-spacing: .04em; color: var(--ink);
+      }
+      .preview-note i {
+        width: 8px; height: 8px; border-radius: 50%; flex: none;
+        background: var(--cyan); box-shadow: 0 0 0 4px rgba(15, 181, 201, .18);
+      }
+
+      .full-access {
+        margin-top: 22px; padding: 18px 22px 16px;
+        border: 1px solid var(--line); border-radius: 18px;
+        background: linear-gradient(120deg, rgba(41, 103, 255, .06), rgba(15, 181, 201, .08));
+      }
+      .full-access-title { margin: 0 0 6px; display: flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 800; letter-spacing: .14em; }
+      .full-access-title .lock { color: var(--blue); font-size: 14px; letter-spacing: 0; }
+      .full-access-text { margin: 0 0 14px; color: var(--muted); font-size: 12.5px; }
+      .full-access .material-actions { margin-bottom: 12px; }
+      .full-access-hint { margin: 0; color: var(--muted); font-size: 11.5px; line-height: 1.7; }
+
       .viewer-wrap { border-top: 1px solid var(--line); background: #dde9f8; }
       .viewer {
         width: 100%; height: 640px; border: 0; display: block;
@@ -161,13 +185,21 @@
               Pipeline 流水线，最后以鸢尾花数据集全流程收尾。零基础按页顺序读。
             </p>
             <div class="material-actions">
-              <a class="button button-primary" href="assets/noai/sklearn.pdf" target="_blank" rel="noreferrer">在线阅读</a>
-              <a class="button button-ghost" href="assets/noai/sklearn.pdf" download>下载 PDF</a>
+              <a class="button button-ghost" href="assets/noai/sklearn.pdf#page=4" target="_blank" rel="noreferrer">在线试读</a>
+            </div>
+            <div class="full-access">
+              <p class="full-access-title"><span class="lock" aria-hidden="true">◈</span>完整讲义</p>
+              <p class="full-access-text">完整 48 页内容为社员专享</p>
+              <div class="material-actions">
+                <a class="button button-primary" href="https://chat.wfla-ailab.top/" target="_blank" rel="noreferrer">去聊天站登录解锁 ↗</a>
+              </div>
+              <p class="full-access-hint">登录后在聊天站向管理员或管家 Agent 索取完整版</p>
             </div>
           </div>
           <div class="viewer-wrap">
-            <object class="viewer" data="assets/noai/sklearn.pdf" type="application/pdf">
-              <div class="viewer-fallback">当前浏览器不支持内嵌预览，<a href="assets/noai/sklearn.pdf" target="_blank" rel="noreferrer">点这里在新窗口打开</a>。</div>
+            <div class="preview-note" role="note"><i aria-hidden="true"></i>前 4 页免费试读 · 完整版社员专享</div>
+            <object class="viewer" data="assets/noai/sklearn.pdf#page=4" type="application/pdf">
+              <div class="viewer-fallback">当前浏览器不支持内嵌预览，<a href="assets/noai/sklearn.pdf#page=4" target="_blank" rel="noreferrer">点这里在新窗口打开试读</a>。</div>
             </object>
           </div>
         </article>
@@ -182,13 +214,21 @@
               附 torch 与 torch.nn 常用 API 速查手册。
             </p>
             <div class="material-actions">
-              <a class="button button-primary" href="assets/noai/pytorch.pdf" target="_blank" rel="noreferrer">在线阅读</a>
-              <a class="button button-ghost" href="assets/noai/pytorch.pdf" download>下载 PDF</a>
+              <a class="button button-ghost" href="assets/noai/pytorch.pdf#page=4" target="_blank" rel="noreferrer">在线试读</a>
+            </div>
+            <div class="full-access">
+              <p class="full-access-title"><span class="lock" aria-hidden="true">◈</span>完整讲义</p>
+              <p class="full-access-text">完整 61 页内容为社员专享</p>
+              <div class="material-actions">
+                <a class="button button-primary" href="https://chat.wfla-ailab.top/" target="_blank" rel="noreferrer">去聊天站登录解锁 ↗</a>
+              </div>
+              <p class="full-access-hint">登录后在聊天站向管理员或管家 Agent 索取完整版</p>
             </div>
           </div>
           <div class="viewer-wrap">
-            <object class="viewer" data="assets/noai/pytorch.pdf" type="application/pdf">
-              <div class="viewer-fallback">当前浏览器不支持内嵌预览，<a href="assets/noai/pytorch.pdf" target="_blank" rel="noreferrer">点这里在新窗口打开</a>。</div>
+            <div class="preview-note" role="note"><i aria-hidden="true"></i>前 4 页免费试读 · 完整版社员专享</div>
+            <object class="viewer" data="assets/noai/pytorch.pdf#page=4" type="application/pdf">
+              <div class="viewer-fallback">当前浏览器不支持内嵌预览，<a href="assets/noai/pytorch.pdf#page=4" target="_blank" rel="noreferrer">点这里在新窗口打开试读</a>。</div>
             </object>
           </div>
         </article>

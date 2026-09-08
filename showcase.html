@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#eaf1f9">
+<meta name="description" content="WFLA AI Lab 作品廊：成员的 GitHub 项目与学校项目，审核后在此展出。">
+<title>作品廊 · WFLA AI Lab</title>
+<link rel="icon" href="assets/ai-lab-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0e1c30;
+    --muted: #5b6b80;
+    --page: #eaf1f9;
+    --card: #ffffff;
+    --line: rgba(14, 28, 48, .12);
+    --blue: #2967ff;
+    --cyan: #0fb5c9;
+    --cyan-soft: #0794a8;
+    --container: min(1180px, calc(100vw - 48px));
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background:
+      radial-gradient(800px 380px at 88% -6%, rgba(41,103,255,.09), transparent 62%),
+      radial-gradient(640px 340px at -8% 24%, rgba(15,181,201,.07), transparent 58%),
+      var(--page);
+    color: var(--ink);
+    font-family: "Manrope", "Noto Sans SC", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.85;
+  }
+  a { color: inherit; text-decoration: none; }
+  .site-header {
+    width: var(--container); height: 70px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; }
+  .brand-mark {
+    width: 40px; height: 40px; border-radius: 12px; overflow: hidden; background: white;
+    box-shadow: 0 6px 22px rgba(31, 123, 255, .16); display: grid; place-items: center;
+  }
+  .brand-mark span { color: var(--blue); font-weight: 900; font-size: 15px; }
+  .brand small { display: block; font-size: 8px; letter-spacing: .18em; opacity: .55; }
+  .site-nav { display: flex; align-items: center; gap: 24px; font-size: 13px; font-weight: 600; }
+  .site-nav a { opacity: .75; transition: opacity .2s; }
+  .site-nav a:hover { opacity: 1; }
+  .nav-cta {
+    padding: 10px 18px; border-radius: 999px; font-weight: 800; font-size: 13px; opacity: 1 !important;
+    background: linear-gradient(120deg, var(--blue), #1c8cff 62%, var(--cyan)); color: white;
+    box-shadow: 0 10px 30px rgba(29, 104, 255, .28); transition: transform .25s, box-shadow .25s;
+  }
+  .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(29, 104, 255, .4); }
+
+  .page-head { width: var(--container); margin: 0 auto; padding: 64px 0 10px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px;
+    border: 1px solid rgba(41,103,255,.22); background: rgba(41,103,255,.07);
+    border-radius: 999px; color: var(--cyan-soft); font-size: 11px; letter-spacing: .14em; font-weight: 800;
+  }
+  h1 {
+    margin: 20px 0 12px; font-family: "Noto Sans SC", sans-serif;
+    font-size: clamp(36px, 4.6vw, 60px); font-weight: 900; letter-spacing: -.045em; line-height: 1.1;
+  }
+  h1 em { font-style: normal; color: var(--blue); }
+  .lead { max-width: 640px; color: var(--muted); font-size: 15px; margin: 0; }
+
+  .groups { width: var(--container); margin: 0 auto; padding: 34px 0 30px; }
+  .member-group { margin-bottom: 38px; }
+  .member-head {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 16px;
+  }
+  .member-head img {
+    width: 52px; height: 52px; border-radius: 50%; background: white;
+    box-shadow: 0 6px 22px rgba(31, 123, 255, .16); object-fit: cover;
+  }
+  .member-head b { font-size: 17px; letter-spacing: -.02em; }
+  .member-head small { display: block; color: var(--muted); font-size: 11px; letter-spacing: .1em; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
+  .pcard {
+    background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+    padding: 22px 24px; box-shadow: 0 18px 50px rgba(24, 60, 120, .06);
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .pcard:hover { transform: translateY(-4px); box-shadow: 0 26px 66px rgba(24, 60, 120, .1); border-color: rgba(15,181,201,.35); }
+  .pcard h3 { margin: 0; font-size: 17px; letter-spacing: -.02em; }
+  .pcard h3 a { color: var(--ink); }
+  .pcard h3 a:hover { color: var(--blue); }
+  .pcard .desc { color: var(--muted); font-size: 13.5px; flex: 1; }
+  .tag {
+    display: inline-block; padding: 2px 12px; border-radius: 999px; font-size: 11px; font-weight: 700;
+    background: #e3ecfd; color: #1d4fd7; width: fit-content;
+  }
+  .meta-row { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
+  .meta-row .lang::before { content: "● "; color: var(--cyan); }
+  .actions { display: flex; gap: 10px; margin-top: 4px; }
+  .actions a {
+    padding: 8px 16px; border-radius: 999px; font-size: 12.5px; font-weight: 800; transition: .2s;
+    border: 1px solid var(--line); background: rgba(255,255,255,.7); color: var(--ink);
+  }
+  .actions a:hover { background: white; color: var(--blue); transform: translateY(-2px); }
+  .actions a.primary { background: linear-gradient(120deg, var(--blue), #1c8cff 62%, var(--cyan)); color: white; border: 0; box-shadow: 0 8px 24px rgba(29,104,255,.25); }
+  .pcard.dead { opacity: .55; }
+  .pcard.dead .dead-note { color: #b42323; font-size: 12px; font-weight: 700; }
+
+  .empty {
+    width: var(--container); margin: 20px auto 40px; padding: 56px 40px; text-align: center;
+    background: var(--card); border: 1px solid var(--line); border-radius: 24px;
+    box-shadow: 0 30px 90px rgba(24, 60, 120, .08);
+  }
+  .empty .icon {
+    width: 64px; height: 64px; margin: 0 auto 18px; border-radius: 18px; display: grid; place-items: center;
+    background: linear-gradient(120deg, var(--blue), #1c8cff 62%, var(--cyan)); color: white; font-size: 26px;
+  }
+  .empty h2 { margin: 0 0 8px; font-family: "Noto Sans SC", sans-serif; letter-spacing: -.03em; }
+  .empty p { color: var(--muted); font-size: 14px; margin: 0; }
+  .empty a { color: var(--blue); font-weight: 800; }
+
+  .site-footer {
+    width: var(--container); margin: 30px auto 0; padding: 24px 0 44px;
+    border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  }
+  .site-footer p { margin: 0; color: var(--muted); font-size: 10px; letter-spacing: .16em; }
+  .site-footer nav { display: flex; gap: 20px; font-size: 11px; letter-spacing: .12em; }
+  .site-footer nav a { color: var(--cyan-soft); font-weight: 700; }
+  @media (max-width: 720px) { .site-nav a:not(.nav-cta) { display: none; } }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <span class="brand-mark"><span>AI</span></span>
+    <span>WFLA AI Lab<small>SHOWCASE</small></span>
+  </a>
+  <nav class="site-nav">
+    <a href="index.html">返回官网</a>
+    <a class="nav-cta" href="https://chat.wfla-ailab.top/portal" target="_blank" rel="noreferrer">社团平台 ↗</a>
+  </nav>
+</header>
+
+<div class="page-head">
+  <span class="eyebrow">SHOWCASE · 作品廊</span>
+  <h1>我们做了什么，<br><em>都在这里。</em></h1>
+  <p class="lead">成员的 GitHub 项目与学校项目，管理员审核后在此展出。点击卡片直达仓库与在线演示。</p>
+</div>
+
+<div class="groups" id="showcase-groups"></div>
+
+<div class="empty" id="empty-state" style="display:none">
+  <div class="icon">◈</div>
+  <h2>作品廊正在筹备中</h2>
+  <p>第一批作品审核通过后会出现在这里。想展示你的项目？<a href="https://chat.wfla-ailab.top/arena" target="_blank" rel="noreferrer">登录社团平台 → 擂台 → 作品</a> 提交你的 GitHub 仓库。</p>
+</div>
+
+<footer class="site-footer">
+  <p>WFLA AI LAB · SHOWCASE</p>
+  <nav>
+    <a href="index.html">官网首页</a>
+    <a href="https://chat.wfla-ailab.top/portal" target="_blank" rel="noreferrer">社团平台</a>
+    <a href="https://github.com/WFLA-AI-Lab" target="_blank" rel="noreferrer">GITHUB ↗</a>
+  </nav>
+</footer>
+
+<script>
+(function () {
+  var API = "https://chat.wfla-ailab.top/arena/api/projects.json";
+  var CACHE_TTL = 30 * 60 * 1000; // 30 分钟
+
+  function ghCacheKey(owner, repo) { return "gh-" + owner + "/" + repo; }
+  function ghCacheGet(owner, repo) {
+    try {
+      var raw = localStorage.getItem(ghCacheKey(owner, repo));
+      if (!raw) return null;
+      var obj = JSON.parse(raw);
+      if (Date.now() - obj.t > CACHE_TTL) return null;
+      return obj.d;
+    } catch (e) { return null; }
+  }
+  function ghCacheSet(owner, repo, data) {
+    try { localStorage.setItem(ghCacheKey(owner, repo), JSON.stringify({ t: Date.now(), d: data })); } catch (e) {}
+  }
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function renderGroups(items) {
+    var box = document.getElementById("showcase-groups");
+    var byOwner = {};
+    items.forEach(function (p) {
+      var o = p.github_owner || "unknown";
+      (byOwner[o] = byOwner[o] || []).push(p);
+    });
+    var html = "";
+    Object.keys(byOwner).sort().forEach(function (owner) {
+      html += '<div class="member-group">'
+        + '<div class="member-head">'
+        + '<img src="https://github.com/' + encodeURIComponent(owner) + '.png?size=80" alt="">'
+        + '<div><b>' + esc(owner) + '</b><small>GITHUB MEMBER</small></div>'
+        + '</div><div class="cards">';
+      byOwner[owner].forEach(function (p) {
+        var repo = p.github_repo || "";
+        var ghUrl = "https://github.com/" + encodeURIComponent(owner) + "/" + encodeURIComponent(repo);
+        html += '<div class="pcard" id="pc-' + esc(owner) + "-" + esc(repo) + '">'
+          + '<h3><a href="' + esc(p.html_url || ghUrl) + '" target="_blank" rel="noreferrer">' + esc(p.display_name || repo) + "</a></h3>"
+          + '<span class="tag">' + esc(p.tag || "其它") + "</span>"
+          + '<div class="desc">' + esc(p.description || "（暂无简介）") + "</div>"
+          + '<div class="meta-row" data-meta></div>'
+          + '<div class="actions">'
+          + '<a class="primary" href="' + esc(p.html_url || ghUrl) + '" target="_blank" rel="noreferrer">GitHub ↗</a>'
+          + (p.demo_url ? '<a href="' + esc(p.demo_url) + '" target="_blank" rel="noreferrer">在线 demo ↗</a>' : "")
+          + "</div></div>";
+      });
+      html += "</div></div>";
+    });
+    box.innerHTML = html;
+    return byOwner;
+  }
+
+  function enhanceRepo(owner, repo, cardEl) {
+    var cached = ghCacheGet(owner, repo);
+    if (cached) { applyMeta(cardEl, cached, false); return; }
+    fetch("https://api.github.com/repos/" + encodeURIComponent(owner) + "/" + encodeURIComponent(repo))
+      .then(function (r) {
+        if (r.status === 404) { cardEl.classList.add("dead"); cardEl.querySelector("[data-meta]").innerHTML = '<span class="dead-note">仓库暂不可访问</span>'; return null; }
+        if (!r.ok) return null;
+        return r.json();
+      })
+      .then(function (d) {
+        if (!d) return;
+        ghCacheSet(owner, repo, d);
+        applyMeta(cardEl, d, true);
+      })
+      .catch(function () {});
+  }
+  function applyMeta(cardEl, d, cache) {
+    var meta = cardEl.querySelector("[data-meta]");
+    if (!meta || meta.dataset.done) return;
+    meta.dataset.done = "1";
+    var parts = [];
+    if (d.language) parts.push('<span class="lang">' + esc(d.language) + "</span>");
+    if (typeof d.stargazers_count === "number") parts.push("<span>★ " + d.stargazers_count + "</span>");
+    if (d.updated_at) parts.push("<span>更新于 " + esc(String(d.updated_at).slice(0, 10)) + "</span>");
+    meta.innerHTML = parts.join("");
+  }
+
+  fetch(API)
+    .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
+    .then(function (items) {
+      if (!Array.isArray(items) || items.length === 0) { showEmpty(); return; }
+      document.getElementById("empty-state").style.display = "none";
+      var byOwner = renderGroups(items);
+      Object.keys(byOwner).forEach(function (owner) {
+        byOwner[owner].forEach(function (p) {
+          if (!p.github_owner || !p.github_repo) return;
+          var el = document.getElementById("pc-" + p.github_owner + "-" + p.github_repo);
+          if (el) enhanceRepo(p.github_owner, p.github_repo, el);
+        });
+      });
+    })
+    .catch(function () { showEmpty(); });
+
+  function showEmpty() { document.getElementById("empty-state").style.display = "block"; }
+})();
+</script>
+</body>
+</html>
