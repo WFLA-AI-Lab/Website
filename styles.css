@@ -77,7 +77,7 @@ button.nav-cta { appearance: none; background: transparent; color: inherit; curs
 .menu-toggle { display: none; }
 
 .hero {
-  position: relative; min-height: 860px; height: 100svh; max-height: 1040px;
+  position: relative; min-height: 860px; height: auto; max-height: none;
   background: linear-gradient(180deg, #f6f9ff 0%, #eaf3ff 55%, #e4efff 100%);
   color: var(--ink); overflow: hidden;
 }
@@ -92,9 +92,11 @@ button.nav-cta { appearance: none; background: transparent; color: inherit; curs
 .hero-glow-a { width: 520px; height: 520px; right: 4%; top: 16%; background: var(--blue); opacity: .12; }
 .hero-glow-b { width: 360px; height: 360px; left: -8%; bottom: -8%; background: var(--cyan); opacity: .1; }
 .hero-content {
-  width: var(--container); position: absolute; z-index: 3; left: 50%; top: 47%;
-  transform: translate(-50%, -50%); padding-right: 48%;
+  width: var(--container); position: relative; z-index: 3;
+  margin: 0 auto; padding: 150px 48% 40px 0;
 }
+/* hero 三站引导卡：窄容器横排自适应换行 */
+.hero-guide { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
 .eyebrow {
   display: inline-flex; align-items: center; gap: 10px; padding: 9px 14px;
   border: 1px solid rgba(41, 103, 255, .22); background: rgba(41, 103, 255, .07);
@@ -350,7 +352,7 @@ button.contact-card { width: 100%; appearance: none; font: inherit; text-align: 
   .site-nav > a { padding: 15px; }
   .nav-cta { margin-top: 4px; justify-content: space-between; }
   .hero { min-height: 940px; height: auto; }
-  .hero-content { position: relative; top: 0; left: 0; transform: none; padding: 154px 0 440px; width: var(--container); margin: 0 auto; }
+  .hero-content { position: relative; top: 0; left: 0; transform: none; padding: 130px 0 420px; width: var(--container); margin: 0 auto; }
   .hero h1 { font-size: clamp(40px, 10vw, 72px); }
   .hero-orbit { width: 360px; height: 360px; right: 50%; top: auto; bottom: 36px; transform: translateX(50%); }
   .signal-card-a { left: 5px; }
