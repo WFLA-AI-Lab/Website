@@ -107,6 +107,9 @@
   .actions a.primary { background: linear-gradient(120deg, var(--blue), #1c8cff 62%, var(--cyan)); color: white; border: 0; box-shadow: 0 8px 24px rgba(29,104,255,.25); }
   .pcard.dead { opacity: .55; }
   .pcard.dead .dead-note { color: #b42323; font-size: 12px; font-weight: 700; }
+  /* 从分享链接（#pc-owner-repo）进来的那张卡片会被高亮，让人一眼找到 */
+  .pcard.focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(41,103,255,.18), 0 26px 66px rgba(24,60,120,.12); }
+  .member-group:target .member-head b { color: var(--blue); }
 
   .empty {
     width: var(--container); margin: 20px auto 40px; padding: 56px 40px; text-align: center;
@@ -200,7 +203,7 @@
     });
     var html = "";
     Object.keys(byOwner).sort().forEach(function (owner) {
-      html += '<div class="member-group">'
+      html += '<div class="member-group" id="member-' + esc(owner) + '">'
         + '<div class="member-head">'
         + '<img src="https://github.com/' + encodeURIComponent(owner) + '.png?size=80" alt="">'
         + '<div><b>' + esc(owner) + '</b><small>GITHUB MEMBER</small></div>'
@@ -251,6 +254,18 @@
     meta.innerHTML = parts.join("");
   }
 
+  // 支持分享链接直达：#pc-<owner>-<repo>（作品卡片）或 #member-<owner>（成员分组）。
+  // 卡片是异步渲染出来的，所以渲染完再滚一次；地址栏 hash 变化时也响应。
+  function focusFromHash() {
+    var h = decodeURIComponent((location.hash || "").replace(/^#/, ""));
+    if (!h) return;
+    var el = document.getElementById(h);
+    if (!el) return;
+    if (el.classList.contains("pcard")) el.classList.add("focus");
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+  window.addEventListener("hashchange", focusFromHash);
+
   fetch(API)
     .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
     .then(function (items) {
@@ -264,6 +279,7 @@
           if (el) enhanceRepo(p.github_owner, p.github_repo, el);
         });
       });
+      focusFromHash();
     })
     .catch(function () { showEmpty(); });
 
